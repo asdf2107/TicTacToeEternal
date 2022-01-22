@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using TicTacToeEternal.CardTypeHandlers;
 
 namespace TicTacToeEternal
 {
@@ -10,7 +9,7 @@ namespace TicTacToeEternal
     {
         public int Width { get; private set; }
         public int Height { get; private set; }
-        public int[,] Field { get; private set; }
+        public short[,] Field { get; private set; }
         public Player CurrentPlayer { get => _Players[_CurrentPlayerIndex]; }
 
         private List<Player> _Players = new();
@@ -52,7 +51,7 @@ namespace TicTacToeEternal
 
         private void ResetBoard()
         {
-            Field = new int[Width, Height];
+            Field = new short[Width, Height];
         }
 
         public override string ToString()

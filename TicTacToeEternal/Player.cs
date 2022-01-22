@@ -7,11 +7,11 @@ namespace TicTacToeEternal
 {
     public class Player
     {
-        public int Id { get; private set; }
+        public short Id { get; private set; }
 
         private Dictionary<CardType, CardTypeHandler> _CardTypeHandlers;
 
-        public Player(int id)
+        public Player(short id)
         {
             if (id < 1) throw new ArgumentOutOfRangeException(nameof(id));
             Id = id;
@@ -22,12 +22,12 @@ namespace TicTacToeEternal
             };
         }
 
-        public IEnumerable<(int, int)> GetCardMoves(CardType cardType, int[,] field)
+        public IEnumerable<(int, int)> GetCardMoves(CardType cardType, short[,] field)
         {
             return _CardTypeHandlers[cardType].GetAvailableMoves(field);
         }
 
-        public void SetCard(int x, int y, CardType cardType, int[,] field)
+        public void SetCard(int x, int y, CardType cardType, short[,] field)
         {
             _CardTypeHandlers[cardType].PerformMove(x, y, field);
         }

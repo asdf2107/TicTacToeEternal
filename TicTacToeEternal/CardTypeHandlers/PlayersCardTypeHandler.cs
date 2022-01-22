@@ -8,7 +8,7 @@ namespace TicTacToeEternal.CardTypeHandlers
     {
         public PlayersCardTypeHandler(Player player) : base(player) { }
 
-        public override IEnumerable<(int, int)> GetAvailableMoves(int[,] field)
+        public override IEnumerable<(int, int)> GetAvailableMoves(short[,] field)
         {
             List<(int, int)> result = new();
 
@@ -23,7 +23,7 @@ namespace TicTacToeEternal.CardTypeHandlers
             return result;
         }
 
-        public override void PerformMove(int x, int y, int[,] field)
+        public override void PerformMove(int x, int y, short[,] field)
         {
             field[x, y] = Player.Id;
         }

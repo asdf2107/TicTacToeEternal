@@ -13,7 +13,7 @@ namespace TicTacToeEternal.CardTypeHandlers
             Player = player;
         }
 
-        public abstract IEnumerable<(int, int)> GetAvailableMoves(int[,] field);
-        public abstract void PerformMove(int x, int y, int[,] field);
+        public abstract IEnumerable<(int, int)> GetAvailableMoves(short[,] field);
+        public abstract void PerformMove(int x, int y, short[,] field);
     }
 }
